@@ -4,11 +4,23 @@ export default class CommentService {
     this.template = null;
   }
 
+
+  // I hide it because you can't upload a template from the server to a GitHub page.
+  // async loadTemplate() {
+  //   if (this.template) return this.template;
+  //   const res = await fetch(this.templatePath);
+  //   this.template = await res.text();
+  //   return this.template;
+  // }
   async loadTemplate() {
     if (this.template) return this.template;
-    const res = await fetch(this.templatePath);
-    this.template = await res.text();
-    return this.template;
+    const script = document.getElementById('joke-template');
+    if (script) {
+      this.template = script.innerHTML.trim();
+      return this.template;
+    }
+    console.error('Template not found!');
+    return '';
   }
 
   async _renderJoke(joke, category = '', container = document.querySelector('#articles')) {

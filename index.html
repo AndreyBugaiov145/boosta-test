@@ -103,5 +103,27 @@
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script type="module" src="asset/js/main.js"></script>
+
+
+
+<!--I added it because you can't upload a template from the server to a GitHub page.-->
+<script type="text/template" id="joke-template">
+    <article class="joke-card d-flex align-items-start mb-4">
+        <div class="icon-circle gray me-3">
+            <svg class="icon-message" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+                <path d="M2 2h12v9H5.414L2 14.414V2z"/>
+            </svg>
+        </div>
+        <div class="flex-grow-1">
+            <p class="meta mb-1">ID: {{id}}</p>
+            <p class="text-small mb-2">{{value}}</p>
+            <p class="meta mb-0">Last update: just now</p>
+        </div>
+        <span class="category-tag">{{category}}</span>
+        <div class="heart-outline" role="button" aria-label="Add to favourites">
+            ❤️
+        </div>
+    </article>
+</script>
 </body>
 </html>
