@@ -1,0 +1,264 @@
+/* ================= Variables & base ================= */
+:root {
+    --gray-light: #f8f8f8;
+    --gray: #ababab;
+    --gray-dark: #333333;
+    --primary-100: #8ea7ff;
+    --primary-200: #7291ff;
+    --danger: #ff6767;
+}
+
+html,
+body {
+    height: 100%;
+    background-color: #ffffff;
+    font-family: 'Roboto', sans-serif;
+    color: var(--gray-dark);
+}
+
+.app-wrapper {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ================= Layout ================= */
+.main-col {
+    padding: 40px 0 40px 140px;
+}
+
+.sidebar {
+    background: var(--gray-light);
+    min-height: 100vh;
+    padding: 40px;
+}
+
+/* ================= Typography ================= */
+h1 {
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 44px;
+    margin-bottom: 12px;
+}
+
+h2 {
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 44px;
+    margin-bottom: 32px;
+}
+
+.text-small {
+    font-size: 14px;
+    line-height: 20px;
+    color: var(--gray-dark);
+}
+
+/* ================= Favourite block ================= */
+.favourite-block {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.favourite-label {
+    font-weight: 500;
+    color: var(--gray);
+}
+
+.icon-circle {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.icon-circle.black {
+    background: var(--gray-dark);
+}
+
+.icon-burger line,
+.icon-close line {
+    stroke: #ffffff;
+    stroke-width: 2;
+    stroke-linecap: round;
+}
+
+.icon-burger {
+    width: 16px;
+    height: 16px;
+}
+
+.icon-close {
+    width: 16px;
+    height: 16px;
+}
+
+/* ================= Radio custom ================= */
+.form-check-input[type='radio'] {
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--gray);
+}
+.form-check-input:checked {
+    background-color: var(--gray-dark);
+    border-color: var(--gray-dark);
+}
+
+/* ================= Category pills ================= */
+.category-pill {
+    display: inline-block;
+    padding: 4px 16px;
+    border: 2px solid var(--gray-light);
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gray);
+    background: #ffffff;
+    margin-right: 8px;
+    margin-bottom: 8px;
+    transition: all 0.2s ease;
+}
+.category-pill.active {
+    background: var(--gray-light);
+    border-color: var(--gray-light);
+    color: var(--gray-dark);
+}
+.category-pill:hover {
+    background: var(--gray-light);
+}
+
+/* ================= Primary gradient button ================= */
+.btn-gradient {
+    background: linear-gradient(90.55deg, var(--primary-100) 0%, var(--primary-200) 100%);
+    color: #ffffff;
+    font-weight: 700;
+    border-radius: 10px;
+    padding: 10px 0;
+    width: 152px;
+    border: none;
+}
+.btn-gradient:hover {
+    opacity: 0.9;
+    color: #ffffff;
+}
+
+/* ================= Joke & favourite cards ================= */
+.joke-card {
+    background: var(--gray-light);
+    border-radius: 20px;
+    padding: 36px 40px;
+    position: relative;
+}
+.joke-card .category-tag {
+    background: #ffffff;
+    border-radius: 6px;
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 4px 20px;
+    position: absolute;
+    bottom: 24px;
+    right: 40px;
+}
+
+.icon-message path {
+    fill: var(--gray);
+}
+
+.fav-card {
+    background: #ffffff;
+    border: 1px solid var(--gray-light);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    padding: 32px 20px 24px;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.heart {
+    position: absolute;
+    top: 20px;
+    right: 24px;
+    color: var(--danger);
+    font-size: 20px;
+}
+
+.meta {
+    font-size: 10px;
+    color: var(--gray);
+}
+
+.sidebar-title {
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--gray);
+    margin-bottom: 1rem;
+}
+
+/* ================= Offcanvas ================= */
+.offcanvas-title,
+.favourite-label {
+    font-weight: 500;
+    color: var(--gray-dark);
+}
+
+.offcanvas-body {
+    padding-top: 20px;
+}
+
+/* ================= Responsive ================= */
+@media (max-width: 833.98px) {
+    .main-col {
+        padding: 32px 24px;
+    }
+    .sidebar {
+        display: none !important;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .joke-card {
+        padding: 24px;
+    }
+    .joke-card .category-tag {
+        bottom: 16px;
+        right: 24px;
+    }
+    .btn-gradient {
+        width: 100%;
+    }
+}
+
+@media (max-width: 375.98px) {
+    .main-col {
+        padding: 24px 16px;
+    }
+    h1 {
+        font-size: 28px;
+        line-height: 38px;
+    }
+    h2 {
+        font-size: 20px;
+        line-height: 32px;
+    }
+    .category-pill {
+        font-size: 11px;
+        padding: 3px 12px;
+    }
+    .fav-card {
+        padding: 24px 16px 20px;
+    }
+    .fav-card .heart {
+        right: 16px;
+    }
+    .joke-card {
+        border-radius: 16px;
+    }
+}
